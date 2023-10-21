@@ -3,31 +3,44 @@ import { View, Text, SafeAreaView, StatusBar, StyleSheet, ImageBackground } from
 import IconText from '../components/IconText';
 
 function City () {
+
+    const { 
+        container,
+        cityName,
+        cityText,
+        countryName,
+        populationWrapper,
+        populationText,
+        sunWrapper,
+        sunText,
+        rowLayout
+    } = styles;
+
     return (
-        <SafeAreaView style={styles.container}>
+        <SafeAreaView style={container}>
             <ImageBackground source={require('../../assets/city-background.jpg')} style={styles.imageLayout}>
-                <Text style={[styles.cityName, styles.cityText]}>London</Text>
-                <Text style={[styles.countryName, styles.cityText]}>United Kingdom</Text>
-                <View style={styles.populationWrapper}>
+                <Text style={[cityName, cityText]}>London</Text>
+                <Text style={[countryName, cityText]}>United Kingdom</Text>
+                <View style={[populationWrapper, rowLayout]}>
                     <IconText 
                         iconName={'user'} 
                         iconColor={'white'} 
                         bodyText={'8000'} 
-                        bodyTextStyles={styles.populationText} 
+                        bodyTextStyles={populationText} 
                     />
                 </View>
-                <View style={styles.sunWrapper}>
+                <View style={[sunWrapper, rowLayout]}>
                     <IconText 
                         iconName={'sunrise'} 
                         iconColor={'white'} 
-                        bodyText={'10:46:58am'} 
-                        bodyTextStyles={styles.sunText} 
+                        bodyText={'10:46:58 am'} 
+                        bodyTextStyles={sunText} 
                     />
                     <IconText 
                         iconName={'sunset'} 
                         iconColor={'white'} 
-                        bodyText={'17:28:15pm'} 
-                        bodyTextStyles={styles.sunText} 
+                        bodyText={'17:28:15 pm'} 
+                        bodyTextStyles={sunText} 
                     />
                 </View>
             </ImageBackground>
@@ -65,16 +78,16 @@ const styles = StyleSheet.create({
         color: 'white',
     },
     populationWrapper: {
-        flexDirection: 'row',
-        alignItems: 'center',
         justifyContent: 'center',
         marginTop: 30
     },
     sunWrapper: {
-        flexDirection: 'row',
-        alignItems: 'center',
         justifyContent: 'space-around',
         marginTop: 30
+    },
+    rowLayout: {
+        flexDirection: 'row',
+        alignItems: 'center'
     }
 });
 
