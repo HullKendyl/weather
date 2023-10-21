@@ -1,6 +1,5 @@
 import React from "react";
 import { View, Text, SafeAreaView, StatusBar, StyleSheet, ImageBackground } from 'react-native';
-import { Feather } from '@expo/vector-icons';
 import IconText from '../components/IconText';
 
 function City () {
@@ -18,10 +17,18 @@ function City () {
                     />
                 </View>
                 <View style={styles.sunWrapper}>
-                    <Feather name={'sunrise'} size={50} color={'white'}/> 
-                    <Text style={styles.sunText}>10:46:58am</Text>
-                    <Feather name={'sunset'} size={50} color={'white'}/> 
-                    <Text style={styles.sunText}>17:28:15pm</Text>
+                    <IconText 
+                        iconName={'sunrise'} 
+                        iconColor={'white'} 
+                        bodyText={'10:46:58am'} 
+                        bodyTextStyles={styles.sunText} 
+                    />
+                    <IconText 
+                        iconName={'sunset'} 
+                        iconColor={'white'} 
+                        bodyText={'17:28:15pm'} 
+                        bodyTextStyles={styles.sunText} 
+                    />
                 </View>
             </ImageBackground>
         </SafeAreaView> 
